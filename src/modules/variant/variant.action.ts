@@ -22,11 +22,12 @@ import type { SharedModuleOptions } from "~/shared";
 export async function listAllVariants(
   options: ListAllVariantsOptions & SharedModuleOptions
 ): Promise<ListAllVariantsResult> {
-  const { productId, ...rest } = options;
+  const { productId, status, ...rest } = options;
 
   return requestLemonSqueeze<ListAllVariantsResult>({
     params: {
       ...(productId ? { product_id: productId } : {}),
+      ...(status ? { status } : {}),
     },
     path: "/variants",
     ...rest,

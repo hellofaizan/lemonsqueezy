@@ -7,6 +7,8 @@ import type {
 
 export type LemonsqueezyInterval = "day" | "week" | "month" | "year";
 
+export type LemonsqueezyVariantStatus = "pending" | "draft" | "published";
+
 /**
  * @docs https://docs.lemonsqueezy.com/api/variants#the-variant-object
  */
@@ -111,7 +113,7 @@ export interface LemonsqueezyVariant {
      *
      * If a variant has a `pending` status, it is considered the “default” variant and is not shown as a separate option at checkout
      */
-    status: "pending" | "draft" | "published";
+    status: LemonsqueezyVariantStatus;
     /**
      * If `pay_what_you_want` is `true`, this is the suggested price for this variant shown at checkout, as a positive integer in cents
      */
@@ -144,6 +146,7 @@ export interface ListAllVariantsOptions extends SharedLemonsqueezyOptions {
    * Only return variants belonging to the product with this ID
    */
   productId?: string;
+  status?: LemonsqueezyVariantStatus;
 }
 
 export type ListAllVariantsResult = PaginatedBaseLemonsqueezyResponse<

@@ -1,3 +1,4 @@
+import qs from "qs";
 import { fetch } from "undici";
 import { join } from "node:path";
 
@@ -28,21 +29,14 @@ export async function requestLemonSqueeze<
 }: LemonsqueezyOptions<TData>): Promise<TResponse> {
   try {
     const url = new URL(join(apiVersion, path), baseUrl);
+    const query = {
+      ...(include ? { include: include.map((i) => LemonsqueezyDataType[i]).join(",") } : {}),
+      ...(page ? { page: page.toString() } : {}),
+      ...params
+    };
+    const queryString = Object.keys(query).length > 0 ? `?${qs.stringify(query)}` : '';
 
-    if (include)
-      url.searchParams.append(
-        "include",
-        include.map((i) => LemonsqueezyDataType[i]).join(",")
-      );
-
-    if (page) url.searchParams.append("page", page.toString());
-
-    if (params && method === "GET")
-      Object.entries(params).forEach(([key, value]) =>
-        url.searchParams.append(key, value)
-      );
-
-    const response = await fetch(url.href, {
+    const response = await fetch(`${url.href}${queryString}`, {
       headers: {
         Accept: "application/vnd.api+json",
         Authorization: `Bearer ${apiKey}`,
