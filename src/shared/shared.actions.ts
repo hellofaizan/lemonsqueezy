@@ -25,7 +25,7 @@ export async function requestLemonSqueeze<
   path,
 }: LemonsqueezyOptions<TData>): Promise<TResponse> {
   try {
-    const url = new URL(`${apiVersion}/${path}`, baseUrl);
+    const url = new URL(`${apiVersion}${path}`, baseUrl);
     const query = {
       ...(include
         ? { include: include.map((i) => LemonsqueezyDataType[i]).join(",") }
