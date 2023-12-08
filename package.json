@@ -1,6 +1,6 @@
 {
   "name": "lmnsqz",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Unofficial TypeScript SDK for the Lemon Squeezy API",
   "repository": {
     "type": "git",
@@ -160,14 +160,15 @@
     }
   },
   "scripts": {
-    "dev": "yarn build --watch",
+    "dev": "npm run build --watch",
     "build": "rimraf lib && unbuild",
-    "build:prod": "cross-env NODE_ENV=production yarn build",
+    "build:prod": "cross-env NODE_ENV=production npm run build",
     "format": "prettier --write \"**/*.{js,json,ts}\"",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "test:ui": "vitest watch --ui",
-    "release": "np",
+    "prerelease": "npm run build",
+    "release": "np --no-tests",
     "postrelease": "ts-node scripts/postrelease.ts",
     "postversion": "ts-node scripts/postversion.ts"
   },
