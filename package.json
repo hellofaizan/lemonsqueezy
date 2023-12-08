@@ -1,6 +1,6 @@
 {
   "name": "lmnsqz",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Unofficial TypeScript SDK for the Lemon Squeezy API",
   "repository": {
     "type": "git",
