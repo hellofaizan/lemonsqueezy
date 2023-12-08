@@ -4,10 +4,10 @@
   "description": "Unofficial TypeScript SDK for the Lemon Squeezy API",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexgrozav/lmnsqz.git"
+    "url": "https://github.com/alexgrozav/lemonsqueezy.git"
   },
-  "homepage": "https://github.com/alexgrozav/lmnsqz",
-  "bugs": "https://github.com/alexgrozav/lmnsqz/issues",
+  "homepage": "https://github.com/alexgrozav/lemonsqueezy",
+  "bugs": "https://github.com/alexgrozav/lemonsqueezy/issues",
   "author": {
     "name": "alexgrozav",
     "email": "alex@grozav.com",
