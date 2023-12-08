@@ -4,7 +4,7 @@
     <br/>
     🍋
     <br />
-    lemonsqueezy.ts
+    lmnsqz
     <br />
     <br />
     <br />
@@ -12,13 +12,13 @@
   </h1>
   <sup>
     <br />
-    JavaScript / TypeScript SDK for the Lemon Squeezy API</em>
+    Unofficial TypeScript SDK for the Lemon Squeezy API</em>
     <br />
     <br />
   
-[![Build status](https://img.shields.io/github/actions/workflow/status/NuroDev/lemonsqueezy.ts/ci.yml?branch=main&label=%20&logo=github&logoColor=white&style=for-the-badge)](https://github.com/NuroDev/lemonsqueezy.ts/actions/workflows/ci.yml)
-[![Package version](https://img.shields.io/npm/v/lemonsqueezy.ts?label=%20&style=for-the-badge)](https://www.npmjs.com/package/lemonsqueezy.ts)
-[![Package monthly downloads](https://img.shields.io/npm/dm/lemonsqueezy.ts?color=blueviolet&label=%20&style=for-the-badge)](https://www.npmjs.com/package/lemonsqueezy.ts)
+[![Build status](https://img.shields.io/github/actions/workflow/status/alexgrozav/lemonsqueezy/ci.yml?branch=main&label=%20&logo=github&logoColor=white&style=for-the-badge)](https://github.com/alexgrozav/lemonsqueezy/actions/workflows/ci.yml)
+[![Package version](https://img.shields.io/npm/v/lmnsqz?label=%20&style=for-the-badge)](https://www.npmjs.com/package/lmnsqz)
+[![Package monthly downloads](https://img.shields.io/npm/dm/lmnsqz?color=blueviolet&label=%20&style=for-the-badge)](https://www.npmjs.com/package/lmnsqz)
 [![Docs](https://img.shields.io/badge/-Docs-blue.svg?style=for-the-badge)](https://docs.lemonsqueezy.com/api)
 
   </sup>
@@ -32,13 +32,13 @@ Install it locally in your project
 
 ```bash
 # npm
-npm install lemonsqueezy.ts
+npm install lmnsqz
 
 # yarn
-yarn add lemonsqueezy.ts
+yarn add lmnsqz
 
 # pnpm
-pnpm install lemonsqueezy.ts
+pnpm install lmnsqz
 ```
 
 ## 🦄 Usage
@@ -46,7 +46,7 @@ pnpm install lemonsqueezy.ts
 Create a new client instance with your API key
 
 ```typescript
-import { LemonsqueezyClient } from "lemonsqueezy.ts";
+import { LemonsqueezyClient } from "lmnsqz";
 
 const client = new LemonsqueezyClient("YOUR_API_KEY");
 
