@@ -28,3 +28,4 @@ export {
   retrieveVariant,
   updateSubscription,
 } from "./modules";
+export * from "./types";

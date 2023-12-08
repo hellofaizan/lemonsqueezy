@@ -69,6 +69,14 @@ export type {
 } from "~/modules/product/product.types";
 
 export type {
+  LemonsqueezyPrice,
+  ListAllPricesOptions,
+  ListAllPricesResult,
+  RetrievePriceOptions,
+  RetrievePriceResult,
+} from "~/modules/price/price.types";
+
+export type {
   LemonsqueezyStore,
   ListAllStoresOptions,
   ListAllStoresResult,
