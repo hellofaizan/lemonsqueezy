@@ -9,6 +9,7 @@ import {
   listAllLicenseKeys,
   listAllOrderItems,
   listAllOrders,
+  listAllPrices,
   listAllProducts,
   listAllStores,
   listAllSubscriptionInvoices,
@@ -22,6 +23,7 @@ import {
   retrieveLicenseKeyInstance,
   retrieveOrder,
   retrieveOrderItem,
+  retrievePrice,
   retrieveProduct,
   retrieveStore,
   retrieveSubscription,
@@ -40,6 +42,7 @@ import type {
   ListAllLicenseKeysOptions,
   ListAllOrderItemsOptions,
   ListAllOrdersOptions,
+  ListAllPricesOptions,
   ListAllProductsOptions,
   ListAllStoresOptions,
   ListAllSubscriptionInvoicesOptions,
@@ -53,6 +56,7 @@ import type {
   RetrieveLicenseKeyOptions,
   RetrieveOrderItemOptions,
   RetrieveOrderOptions,
+  RetrievePriceOptions,
   RetrieveProductOptions,
   RetrieveStoreOptions,
   RetrieveSubscriptionInvoiceOptions,
@@ -117,6 +121,42 @@ export class LemonsqueezyClient {
    */
   public async listAllStores(options: ListAllStoresOptions = {}) {
     return listAllStores({
+      apiKey: this._apiKey,
+      ...options,
+    });
+  }
+
+  /**
+   * Retrieve price
+   *
+   * @description Retrieves the price with the given ID
+   *
+   * @docs https://docs.lemonsqueezy.com/api/prices#retrieve-a-price
+   *
+   * @param {String} options.id - The ID of the price to retrieve
+   *
+   * @returns A price object
+   */
+  public async retrievePrice(options: RetrievePriceOptions) {
+    return retrievePrice({
+      apiKey: this._apiKey,
+      ...options,
+    });
+  }
+
+  /**
+   * List all prices
+   *
+   * @description Returns a paginated list of prices
+   *
+   * @docs https://docs.lemonsqueezy.com/api/prices#list-all-prices
+   *
+   * @param {Object} [options]
+   *
+   * @returns Returns a paginated list of price objects ordered by `name`
+   */
+  public async listAllPrices(options: ListAllPricesOptions = {}) {
+    return listAllPrices({
       apiKey: this._apiKey,
       ...options,
     });

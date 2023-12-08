@@ -6,6 +6,7 @@ export * from "./licenseKey";
 export * from "./licenseKeyInstance";
 export * from "./order";
 export * from "./orderItem";
+export * from "./price";
 export * from "./product";
 export * from "./store";
 export * from "./subscription";
