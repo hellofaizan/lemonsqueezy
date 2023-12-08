@@ -1,7 +1,6 @@
-import { describe, it, expect, beforeAll } from "vitest";
-
 import { getUser } from ".";
-import { LemonsqueezyDataType } from "~/shared";
+import { LemonsqueezyDataType } from "../../shared";
+import { describe, it, expect, beforeAll } from "vitest";
 
 describe.concurrent("User", () => {
   const apiKey = process.env.LEMON_SQUEEZY_API_KEY as string;

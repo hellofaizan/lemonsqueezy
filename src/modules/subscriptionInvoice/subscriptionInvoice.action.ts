@@ -1,12 +1,11 @@
-import { requestLemonSqueeze } from "~/shared";
-
+import { requestLemonSqueeze } from "../../shared";
+import type { SharedModuleOptions } from "../../shared";
 import type {
   ListAllSubscriptionInvoicesOptions,
   ListAllSubscriptionInvoicesResult,
   RetrieveSubscriptionInvoiceOptions,
   RetrieveSubscriptionInvoiceResult,
 } from "./subscriptionInvoice.types";
-import type { SharedModuleOptions } from "~/shared";
 
 /**
  * List all subscription invoices

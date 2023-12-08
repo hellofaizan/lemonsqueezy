@@ -1,11 +1,11 @@
-import qs from "qs";
-import { fetch } from "undici";
-import { LemonsqueezyDataType } from "~/shared";
+import { LemonsqueezyDataType } from ".";
 import type {
   BaseLemonsqueezyResponse,
   LemonsqueezyOptions,
   PaginatedBaseLemonsqueezyResponse,
-} from "~/shared";
+} from ".";
+import qs from "qs";
+import { fetch } from "undici";
 
 export async function requestLemonSqueeze<
   TResponse extends

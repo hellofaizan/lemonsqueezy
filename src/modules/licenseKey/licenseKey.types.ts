@@ -3,7 +3,7 @@ import type {
   LemonsqueezyDataType,
   PaginatedBaseLemonsqueezyResponse,
   SharedLemonsqueezyOptions,
-} from "~/shared";
+} from "../../shared";
 
 /**
  * @docs https://docs.lemonsqueezy.com/api/license-keys#the-license-key-object

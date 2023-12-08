@@ -10,7 +10,7 @@ export type {
   ListAllCheckoutsResult,
   RetrieveCheckoutOptions,
   RetrieveCheckoutResult,
-} from "~/modules/checkout/checkout.types";
+} from "./modules/checkout/checkout.types";
 
 export type {
   LemonsqueezyDiscount,
@@ -18,7 +18,7 @@ export type {
   ListAllDiscountsResult,
   RetrieveDiscountOptions,
   RetrieveDiscountResult,
-} from "~/modules/discount/discount.types";
+} from "./modules/discount/discount.types";
 
 export type {
   LemonsqueezyFile,
@@ -26,7 +26,7 @@ export type {
   ListAllFilesResult,
   RetrieveFileOptions,
   RetrieveFileResult,
-} from "~/modules/file/file.types";
+} from "./modules/file/file.types";
 
 export type {
   LemonsqueezyLicenseKey,
@@ -34,7 +34,7 @@ export type {
   ListAllLicenseKeysResult,
   RetrieveLicenseKeyOptions,
   RetrieveLicenseKeyResult,
-} from "~/modules/licenseKey/licenseKey.types";
+} from "./modules/licenseKey/licenseKey.types";
 
 export type {
   LemonsqueezyLicenseKeyInstance,
@@ -42,7 +42,7 @@ export type {
   ListAllLicenseKeyInstancesResult,
   RetrieveLicenseKeyInstanceOptions,
   RetrieveLicenseKeyInstanceResult,
-} from "~/modules/licenseKeyInstance/licenseKeyInstance.types";
+} from "./modules/licenseKeyInstance/licenseKeyInstance.types";
 
 export type {
   LemonsqueezyOrder,
@@ -50,7 +50,7 @@ export type {
   ListAllOrdersResult,
   RetrieveOrderOptions,
   RetrieveOrderResult,
-} from "~/modules/order/order.types";
+} from "./modules/order/order.types";
 
 export type {
   LemonsqueezyOrderItem,
@@ -58,7 +58,7 @@ export type {
   ListAllOrderItemsResult,
   RetrieveOrderItemOptions,
   RetrieveOrderItemResult,
-} from "~/modules/orderItem/orderItem.types";
+} from "./modules/orderItem/orderItem.types";
 
 export type {
   LemonsqueezyProduct,
@@ -66,7 +66,7 @@ export type {
   ListAllProductsResult,
   RetrieveProductOptions,
   RetrieveProductResult,
-} from "~/modules/product/product.types";
+} from "./modules/product/product.types";
 
 export type {
   LemonsqueezyPrice,
@@ -74,7 +74,7 @@ export type {
   ListAllPricesResult,
   RetrievePriceOptions,
   RetrievePriceResult,
-} from "~/modules/price/price.types";
+} from "./modules/price/price.types";
 
 export type {
   LemonsqueezyStore,
@@ -82,7 +82,7 @@ export type {
   ListAllStoresResult,
   RetrieveStoreOptions,
   RetrieveStoreResult,
-} from "~/modules/store/store.types";
+} from "./modules/store/store.types";
 
 export type {
   LemonsqueezySubscription,
@@ -92,13 +92,13 @@ export type {
   RetrieveSubscriptionResult,
   UpdateSubscriptionOptions,
   UpdateSubscriptionResult,
-} from "~/modules/subscription/subscription.types";
+} from "./modules/subscription/subscription.types";
 
 export type {
   GetUserOptions,
   GetUserResult,
   LemonsqueezyUser,
-} from "~/modules/user/user.types";
+} from "./modules/user/user.types";
 
 export type {
   LemonsqueezyInterval,
@@ -107,4 +107,4 @@ export type {
   ListAllVariantsResult,
   RetrieveVariantOptions,
   RetrieveVariantResult,
-} from "~/modules/variant/variant.types";
+} from "./modules/variant/variant.types";

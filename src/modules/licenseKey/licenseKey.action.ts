@@ -1,12 +1,11 @@
-import { requestLemonSqueeze } from "~/shared";
-
+import { requestLemonSqueeze } from "../../shared";
+import type { SharedModuleOptions } from "../../shared";
 import type {
   ListAllLicenseKeysOptions,
   ListAllLicenseKeysResult,
   RetrieveLicenseKeyOptions,
   RetrieveLicenseKeyResult,
 } from "./licenseKey.types";
-import type { SharedModuleOptions } from "~/shared";
 
 /**
  * List all license keys

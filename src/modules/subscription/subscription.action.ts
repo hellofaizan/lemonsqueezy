@@ -1,6 +1,6 @@
-import { LemonsqueezyDataType } from "~/shared";
-import { requestLemonSqueeze } from "~/shared";
-
+import { LemonsqueezyDataType } from "../../shared";
+import { requestLemonSqueeze } from "../../shared";
+import type { SharedModuleOptions } from "../../shared";
 import type {
   ListAllSubscriptionsOptions,
   ListAllSubscriptionsResult,
@@ -9,7 +9,6 @@ import type {
   UpdateSubscriptionOptions,
   UpdateSubscriptionResult,
 } from "./subscription.types";
-import type { SharedModuleOptions } from "~/shared";
 
 /**
  * List all subscriptions

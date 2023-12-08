@@ -1,12 +1,11 @@
-import { requestLemonSqueeze } from "~/shared";
-
+import { requestLemonSqueeze } from "../../shared";
+import type { SharedModuleOptions } from "../../shared";
 import type {
   ListAllDiscountsOptions,
   ListAllDiscountsResult,
   RetrieveDiscountOptions,
   RetrieveDiscountResult,
-} from "~/types";
-import type { SharedModuleOptions } from "~/shared";
+} from "../../types";
 
 /**
  * List all discounts

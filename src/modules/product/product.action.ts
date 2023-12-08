@@ -1,11 +1,11 @@
+import { requestLemonSqueeze } from "../../shared";
+import type { SharedModuleOptions } from "../../shared";
 import type {
   ListAllProductsOptions,
   ListAllProductsResult,
   RetrieveProductOptions,
   RetrieveProductResult,
 } from "./product.types";
-import { requestLemonSqueeze } from "~/shared";
-import type { SharedModuleOptions } from "~/shared";
 
 /**
  * List all products

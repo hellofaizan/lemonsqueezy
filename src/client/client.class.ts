@@ -28,8 +28,7 @@ import {
   retrieveSubscriptionInvoice,
   retrieveVariant,
   updateSubscription,
-} from "~/modules";
-
+} from "../modules";
 import type {
   CreateCheckoutOptions,
   GetUserOptions,
@@ -60,7 +59,7 @@ import type {
   RetrieveSubscriptionOptions,
   RetrieveVariantOptions,
   UpdateSubscriptionOptions,
-} from "~/modules";
+} from "../modules";
 
 export class LemonsqueezyClient {
   private _apiKey: string;

@@ -1,5 +1,5 @@
-import { LemonsqueezyDataType, requestLemonSqueeze } from "~/shared";
-
+import { LemonsqueezyDataType, requestLemonSqueeze } from "../../shared";
+import type { SharedModuleOptions } from "../../shared";
 import type {
   CreateCheckoutBody,
   CreateCheckoutOptions,
@@ -9,7 +9,6 @@ import type {
   RetrieveCheckoutOptions,
   RetrieveCheckoutResult,
 } from "./checkout.types";
-import type { SharedModuleOptions } from "~/shared";
 
 /**
  * Create checkout
