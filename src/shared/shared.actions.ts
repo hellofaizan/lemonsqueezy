@@ -1,9 +1,6 @@
 import qs from "qs";
 import { fetch } from "undici";
-import { join } from "node:path";
-
 import { LemonsqueezyDataType } from "~/shared";
-
 import type {
   BaseLemonsqueezyResponse,
   LemonsqueezyOptions,
@@ -28,13 +25,16 @@ export async function requestLemonSqueeze<
   path,
 }: LemonsqueezyOptions<TData>): Promise<TResponse> {
   try {
-    const url = new URL(join(apiVersion, path), baseUrl);
+    const url = new URL(`${apiVersion}/${path}`, baseUrl);
     const query = {
-      ...(include ? { include: include.map((i) => LemonsqueezyDataType[i]).join(",") } : {}),
+      ...(include
+        ? { include: include.map((i) => LemonsqueezyDataType[i]).join(",") }
+        : {}),
       ...(page ? { page: page.toString() } : {}),
-      ...params
+      ...params,
     };
-    const queryString = Object.keys(query).length > 0 ? `?${qs.stringify(query)}` : '';
+    const queryString =
+      Object.keys(query).length > 0 ? `?${qs.stringify(query)}` : "";
 
     const response = await fetch(`${url.href}${queryString}`, {
       headers: {

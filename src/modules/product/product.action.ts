@@ -1,11 +1,10 @@
-import { requestLemonSqueeze } from "~/shared";
-
 import type {
   ListAllProductsOptions,
   ListAllProductsResult,
   RetrieveProductOptions,
   RetrieveProductResult,
 } from "./product.types";
+import { requestLemonSqueeze } from "~/shared";
 import type { SharedModuleOptions } from "~/shared";
 
 /**
@@ -26,7 +25,9 @@ export async function listAllProducts(
 
   return requestLemonSqueeze<ListAllProductsResult>({
     params: {
-      ...(storeId ? { store_id: storeId } : {}),
+      filter: {
+        ...(storeId ? { store_id: storeId } : {}),
+      },
     },
     path: "/products",
     ...rest,

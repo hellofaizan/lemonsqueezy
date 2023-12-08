@@ -1,11 +1,10 @@
-import { requestLemonSqueeze } from "~/shared";
-
 import type {
   ListAllVariantsOptions,
   ListAllVariantsResult,
   RetrieveVariantOptions,
   RetrieveVariantResult,
 } from "./variant.types";
+import { requestLemonSqueeze } from "~/shared";
 import type { SharedModuleOptions } from "~/shared";
 
 /**
@@ -26,8 +25,10 @@ export async function listAllVariants(
 
   return requestLemonSqueeze<ListAllVariantsResult>({
     params: {
-      ...(productId ? { product_id: productId } : {}),
-      ...(status ? { status } : {}),
+      filter: {
+        ...(productId ? { product_id: productId } : {}),
+        ...(status ? { status } : {}),
+      },
     },
     path: "/variants",
     ...rest,
