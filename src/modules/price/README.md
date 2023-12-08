@@ -1,6 +1,6 @@
 ## 💰 Price
 
-[![Docs](https://img.shields.io/badge/-Docs-blue.svg?style=for-the-badge)](https://docs.lemonsqueezy.com/api/products)
+[![Docs](https://img.shields.io/badge/-Docs-blue.svg?style=for-the-badge)](https://docs.lemonsqueezy.com/api/prices)
 
 ```typescript
 import { LemonsqueezyClient } from "lemonsqueezy.ts";
@@ -15,14 +15,14 @@ const prices = await client.listAllPrices();
 ```
 
 ```typescript
-import { retrieveProduct, listAllProducts } from "lemonsqueezy.ts/product";
+import { retrieveProduct, listAllProducts } from "lemonsqueezy.ts/price";
 
-const product = await retrieveProduct({
+const price = await retrieveProduct({
   apiKey: "YOUR_API_KEY",
   id: "...",
 });
 
-const products = await listAllProducts({
+const prices = await listAllProducts({
   apiKey: "YOUR_API_KEY",
 });
 ```
