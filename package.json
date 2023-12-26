@@ -91,6 +91,10 @@
       "import": "./modules/subscriptionInvoice.mjs",
       "require": "./modules/subscriptionInvoice.js"
     },
+    "./subscriptionItem": {
+      "import": "./modules/subscriptionItem.mjs",
+      "require": "./modules/subscriptionItem.js"
+    },
     "./types": {
       "import": "./types.mjs",
       "require": "./types.js"
