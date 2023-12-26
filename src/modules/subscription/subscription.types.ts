@@ -126,6 +126,17 @@ export interface LemonsqueezySubscription {
       update_payment_method: string;
     };
     /**
+     * The first subscription item
+     */
+    first_subscription_item: {
+      id: number;
+      subscription_id: number;
+      price_id: number;
+      quantity: number;
+      created_at: Date;
+      updated_at: Date;
+    };
+    /**
      * The email address of the customer
      */
     user_email: string;

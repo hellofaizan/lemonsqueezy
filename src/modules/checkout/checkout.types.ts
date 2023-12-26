@@ -40,6 +40,13 @@ export interface LemonsqueezyCheckoutData {
    * A pre-filled tax number
    */
   tax_number?: string;
+  /**
+   * Variant quantities
+   */
+  variant_quantities?: Array<{
+    variant_id: number;
+    quantity: number;
+  }>;
 }
 
 export interface LemonsqueezyCheckoutOptions {
