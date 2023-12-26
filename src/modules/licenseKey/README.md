@@ -3,7 +3,7 @@
 [![Docs](https://img.shields.io/badge/-Docs-blue.svg?style=for-the-badge)](https://docs.lemonsqueezy.com/api/license-keys)
 
 ```typescript
-import { LemonsqueezyClient } from "lemonsqueezy.ts";
+import { LemonsqueezyClient } from "lmnsqz";
 
 const client = new LemonsqueezyClient("YOUR_API_KEY");
 
@@ -18,7 +18,7 @@ const licenseKeys = await client.listAllLicenseKeys();
 import {
   retrieveLicenseKey,
   listAllLicenseKeys,
-} from "lemonsqueezy.ts/licenseKey";
+} from "lmnsqz/licenseKey";
 
 const licenseKey = await retrieveLicenseKey({
   apiKey: "YOUR_API_KEY",

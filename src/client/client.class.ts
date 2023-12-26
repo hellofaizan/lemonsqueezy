@@ -13,6 +13,7 @@ import {
   listAllProducts,
   listAllStores,
   listAllSubscriptionInvoices,
+  listAllSubscriptionItems,
   listAllSubscriptions,
   listAllVariants,
   retrieveCheckout,
@@ -27,9 +28,11 @@ import {
   retrieveProduct,
   retrieveStore,
   retrieveSubscription,
+  retrieveSubscriptionItem,
   retrieveSubscriptionInvoice,
   retrieveVariant,
   updateSubscription,
+  updateSubscriptionItem,
 } from "../modules";
 import type {
   CreateCheckoutOptions,
@@ -47,6 +50,7 @@ import type {
   ListAllStoresOptions,
   ListAllSubscriptionInvoicesOptions,
   ListAllSubscriptionsOptions,
+  ListAllSubscriptionItemsOptions,
   ListAllVariantsOptions,
   RetrieveCheckoutOptions,
   RetrieveCustomerOptions,
@@ -60,9 +64,11 @@ import type {
   RetrieveProductOptions,
   RetrieveStoreOptions,
   RetrieveSubscriptionInvoiceOptions,
+  RetrieveSubscriptionItemOptions,
   RetrieveSubscriptionOptions,
   RetrieveVariantOptions,
   UpdateSubscriptionOptions,
+  UpdateSubscriptionItemOptions,
 } from "../modules";
 
 export class LemonsqueezyClient {
@@ -612,6 +618,31 @@ export class LemonsqueezyClient {
     options: ListAllSubscriptionInvoicesOptions = {}
   ) {
     return listAllSubscriptionInvoices({
+      apiKey: this._apiKey,
+      ...options,
+    });
+  }
+
+  public async listAllSubscriptionItems(
+    options: ListAllSubscriptionItemsOptions = {}
+  ) {
+    return listAllSubscriptionItems({
+      apiKey: this._apiKey,
+      ...options,
+    });
+  }
+
+  public async retrieveSubscriptionItem(
+    options: RetrieveSubscriptionItemOptions
+  ) {
+    return retrieveSubscriptionItem({
+      apiKey: this._apiKey,
+      ...options,
+    });
+  }
+
+  public async updateSubscriptionItem(options: UpdateSubscriptionItemOptions) {
+    return updateSubscriptionItem({
       apiKey: this._apiKey,
       ...options,
     });

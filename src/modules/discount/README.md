@@ -3,7 +3,7 @@
 [![Docs](https://img.shields.io/badge/-Docs-blue.svg?style=for-the-badge)](https://docs.lemonsqueezy.com/api/discounts)
 
 ```typescript
-import { LemonsqueezyClient } from "lemonsqueezy.ts";
+import { LemonsqueezyClient } from "lmnsqz";
 
 const client = new LemonsqueezyClient("YOUR_API_KEY");
 
@@ -18,7 +18,7 @@ const discounts = await client.listAllDiscounts({
 ```
 
 ```typescript
-import { retrieveDiscount, listAllDiscounts } from "lemonsqueezy.ts/discount";
+import { retrieveDiscount, listAllDiscounts } from "lmnsqz/discount";
 
 const discount = await retrieveDiscount({
   id: "...",

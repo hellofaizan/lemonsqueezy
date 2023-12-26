@@ -44,6 +44,7 @@ export enum LemonsqueezyDataType {
   products = "products",
   stores = "stores",
   subscriptions = "subscriptions",
+  subscription_items = "subscription-items",
   subscription_invoices = "subscription-invoices",
   users = "users",
   variants = "variants",

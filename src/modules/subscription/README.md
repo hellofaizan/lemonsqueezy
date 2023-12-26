@@ -3,7 +3,7 @@
 [![Docs](https://img.shields.io/badge/-Docs-blue.svg?style=for-the-badge)](https://docs.lemonsqueezy.com/api/subscriptions)
 
 ```typescript
-import { LemonsqueezyClient } from "lemonsqueezy.ts";
+import { LemonsqueezyClient } from "lmnsqz";
 
 const client = new LemonsqueezyClient("YOUR_API_KEY");
 
@@ -23,7 +23,7 @@ import {
   updateSubscription,
   retrieveSubscription,
   listAllSubscriptions,
-} from "lemonsqueezy.ts/subscription";
+} from "lmnsqz/subscription";
 
 const updatedSubscription = await updateSubscription({
   apiKey: "YOUR_API_KEY",

@@ -3,7 +3,7 @@
 [![Docs](https://img.shields.io/badge/-Docs-blue.svg?style=for-the-badge)](https://docs.lemonsqueezy.com/api/variants)
 
 ```typescript
-import { LemonsqueezyClient } from "lemonsqueezy.ts";
+import { LemonsqueezyClient } from "lmnsqz";
 
 const client = new LemonsqueezyClient("YOUR_API_KEY");
 
@@ -15,7 +15,7 @@ const variants = await client.listAllVariants();
 ```
 
 ```typescript
-import { retrieveVariant, listAllVariants } from "lemonsqueezy.ts/variant";
+import { retrieveVariant, listAllVariants } from "lmnsqz/variant";
 
 const variant = await retrieveVariant({
   apiKey: "YOUR_API_KEY",

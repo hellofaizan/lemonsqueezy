@@ -3,7 +3,7 @@
 [![Docs](https://img.shields.io/badge/-Docs-blue.svg?style=for-the-badge)](https://docs.lemonsqueezy.com/api/order-items)
 
 ```typescript
-import { LemonsqueezyClient } from "lemonsqueezy.ts";
+import { LemonsqueezyClient } from "lmnsqz";
 
 const client = new LemonsqueezyClient("YOUR_API_KEY");
 
@@ -18,7 +18,7 @@ const orderItems = await client.listAllOrderItems();
 import {
   retrieveOrderItem,
   listAllOrderItems,
-} from "lemonsqueezy.ts/orderItem";
+} from "lmnsqz/orderItem";
 
 const orderItem = await retrieveOrderItem({
   apiKey: "YOUR_API_KEY",

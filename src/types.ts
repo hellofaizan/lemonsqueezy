@@ -95,6 +95,22 @@ export type {
 } from "./modules/subscription/subscription.types";
 
 export type {
+  LemonsqueezySubscriptionInvoice,
+  ListAllSubscriptionInvoicesOptions,
+  ListAllSubscriptionInvoicesResult,
+  RetrieveSubscriptionInvoiceOptions,
+  RetrieveSubscriptionInvoiceResult,
+} from "./modules/subscriptionInvoice/subscriptionInvoice.types";
+
+export type {
+  LemonsqueezySubscriptionItem,
+  ListAllSubscriptionItemsOptions,
+  ListAllSubscriptionItemsResult,
+  RetrieveSubscriptionItemOptions,
+  RetrieveSubscriptionItemResult,
+} from "./modules/subscriptionItem/subscriptionItem.types";
+
+export type {
   GetUserOptions,
   GetUserResult,
   LemonsqueezyUser,

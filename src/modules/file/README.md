@@ -3,7 +3,7 @@
 [![Docs](https://img.shields.io/badge/-Docs-blue.svg?style=for-the-badge)](https://docs.lemonsqueezy.com/api/files)
 
 ```typescript
-import { LemonsqueezyClient } from "lemonsqueezy.ts";
+import { LemonsqueezyClient } from "lmnsqz";
 
 const client = new LemonsqueezyClient("YOUR_API_KEY");
 
@@ -15,7 +15,7 @@ const files = await client.listAllFiles();
 ```
 
 ```typescript
-import { retrieveFile, listAllFiles } from "lemonsqueezy.ts/file";
+import { retrieveFile, listAllFiles } from "lmnsqz/file";
 
 const file = await retrieveFile({
   apiKey: "YOUR_API_KEY",
