@@ -1,10 +1,14 @@
 import type { SharedModuleOptions } from "../../shared";
 import { requestLemonSqueeze } from "../../shared";
-import type {
+import {
+  CreateCustomerOptions,
+  CreateCustomerResult,
   ListAllCustomersOptions,
   ListAllCustomersResult,
   RetrieveCustomerOptions,
   RetrieveCustomerResult,
+  UpdateCustomerOptions,
+  UpdateCustomerResult,
 } from "./customer.types";
 
 /**
@@ -51,6 +55,78 @@ export async function retrieveCustomer(
 
   return requestLemonSqueeze<RetrieveCustomerResult>({
     path: `/customers/${id}`,
+    ...rest,
+  });
+}
+
+/**
+ * Create customer
+ *
+ * @description Creates a customer with thedata
+ *
+ * @docs https://docs.lemonsqueezy.com/api/customers#create-a-customer
+ *
+ * @returns A customer object
+ */
+export async function createCustomer(
+  options: CreateCustomerOptions & SharedModuleOptions
+): Promise<RetrieveCustomerResult> {
+  const { name, email, city, country, region, storeId, ...rest } = options;
+
+  return requestLemonSqueeze<CreateCustomerResult>({
+    path: "/customers",
+    method: "POST",
+    data: {
+      type: "customers",
+      attributes: {
+        name,
+        email,
+        ...(city ? { city } : {}),
+        ...(country ? { country } : {}),
+        ...(region ? { region } : {}),
+      },
+      relationships: {
+        store: {
+          data: {
+            id: storeId,
+            type: "stores",
+          },
+        },
+      },
+    },
+    ...rest,
+  });
+}
+
+/**
+ * Update customer
+ *
+ * @description Updates the customer with the given ID
+ *
+ * @docs https://docs.lemonsqueezy.com/api/customers#update-a-customer
+ *
+ * @returns A customer object
+ */
+export async function updateCustomer(
+  options: UpdateCustomerOptions & SharedModuleOptions
+): Promise<RetrieveCustomerResult> {
+  const { id, name, email, city, country, region, status, ...rest } = options;
+
+  return requestLemonSqueeze<UpdateCustomerResult>({
+    path: `/customers/${id}`,
+    method: "PATCH",
+    data: {
+      attributes: {
+        ...(name ? { name } : {}),
+        ...(email ? { email } : {}),
+        ...(city ? { city } : {}),
+        ...(country ? { country } : {}),
+        ...(region ? { region } : {}),
+        ...(status ? { status } : {}),
+      },
+      id,
+      type: "customers",
+    },
     ...rest,
   });
 }

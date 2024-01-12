@@ -99,5 +99,30 @@ export interface RetrieveCustomerOptions extends SharedLemonsqueezyOptions {
   id: string;
 }
 
+export interface CreateCustomerOptions extends SharedLemonsqueezyOptions {
+  name: string;
+  email: string;
+  city?: string;
+  region?: string;
+  country?: string;
+  storeId: string;
+}
+
+export interface UpdateCustomerOptions extends SharedLemonsqueezyOptions {
+  id: string;
+  name?: string;
+  email?: string;
+  city?: string;
+  region?: string;
+  country?: string;
+  status?: "archived";
+}
+
 export type RetrieveCustomerResult =
+  BaseLemonsqueezyResponse<LemonsqueezyCustomer>;
+
+export type CreateCustomerResult =
+  BaseLemonsqueezyResponse<LemonsqueezyCustomer>;
+
+export type UpdateCustomerResult =
   BaseLemonsqueezyResponse<LemonsqueezyCustomer>;

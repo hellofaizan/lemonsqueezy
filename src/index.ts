@@ -1,6 +1,7 @@
 export { LemonsqueezyClient } from "./client";
 export {
   createCheckout,
+  createCustomer,
   getUser,
   listAllCheckouts,
   listAllCustomers,
@@ -29,5 +30,6 @@ export {
   retrieveSubscription,
   retrieveVariant,
   updateSubscription,
+  updateCustomer,
 } from "./modules";
 export * from "./types";

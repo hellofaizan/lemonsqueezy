@@ -1,5 +1,6 @@
 import {
   createCheckout,
+  createCustomer,
   getUser,
   listAllCheckouts,
   listAllCustomers,
@@ -31,8 +32,11 @@ import {
   retrieveSubscriptionItem,
   retrieveSubscriptionInvoice,
   retrieveVariant,
+  updateCustomer,
   updateSubscription,
   updateSubscriptionItem,
+  CreateCustomerOptions,
+  UpdateCustomerOptions,
 } from "../modules";
 import type {
   CreateCheckoutOptions,
@@ -679,6 +683,42 @@ export class LemonsqueezyClient {
    */
   public async listAllCustomers(options: ListAllCustomersOptions = {}) {
     return listAllCustomers({
+      apiKey: this._apiKey,
+      ...options,
+    });
+  }
+
+  /**
+   * Create customer
+   *
+   * @description Creates a new customer
+   *
+   * @docs https://docs.lemonsqueezy.com/api/customers#create-a-customer
+   *
+   * @param {Object} [options]
+   *
+   * @returns Returns a customer object
+   */
+  public async createCustomer(options: CreateCustomerOptions) {
+    return createCustomer({
+      apiKey: this._apiKey,
+      ...options,
+    });
+  }
+
+  /**
+   * Update customer
+   *
+   * @description Updates an existing customer
+   *
+   * @docs https://docs.lemonsqueezy.com/api/customers#update-a-customer
+   *
+   * @param {Object} [options]
+   *
+   * @returns Returns a customer object
+   */
+  public async updateCustomer(options: UpdateCustomerOptions) {
+    return updateCustomer({
       apiKey: this._apiKey,
       ...options,
     });
