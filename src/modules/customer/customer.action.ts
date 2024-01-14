@@ -23,7 +23,7 @@ import {
  * @returns Returns a paginated list of customer objects ordered by `created_at` (descending)
  */
 export async function listAllCustomers(
-  options: ListAllCustomersOptions & SharedModuleOptions
+  options: ListAllCustomersOptions & SharedModuleOptions,
 ): Promise<ListAllCustomersResult> {
   const { storeId, email, ...rest } = options;
 
@@ -49,7 +49,7 @@ export async function listAllCustomers(
  * @returns A customer object
  */
 export async function retrieveCustomer(
-  options: RetrieveCustomerOptions & SharedModuleOptions
+  options: RetrieveCustomerOptions & SharedModuleOptions,
 ): Promise<RetrieveCustomerResult> {
   const { id, ...rest } = options;
 
@@ -69,7 +69,7 @@ export async function retrieveCustomer(
  * @returns A customer object
  */
 export async function createCustomer(
-  options: CreateCustomerOptions & SharedModuleOptions
+  options: CreateCustomerOptions & SharedModuleOptions,
 ): Promise<RetrieveCustomerResult> {
   const { name, email, city, country, region, storeId, ...rest } = options;
 
@@ -77,19 +77,21 @@ export async function createCustomer(
     path: "/customers",
     method: "POST",
     data: {
-      type: "customers",
-      attributes: {
-        name,
-        email,
-        ...(city ? { city } : {}),
-        ...(country ? { country } : {}),
-        ...(region ? { region } : {}),
-      },
-      relationships: {
-        store: {
-          data: {
-            id: storeId,
-            type: "stores",
+      data: {
+        type: "customers",
+        attributes: {
+          name,
+          email,
+          ...(city ? { city } : {}),
+          ...(country ? { country } : {}),
+          ...(region ? { region } : {}),
+        },
+        relationships: {
+          store: {
+            data: {
+              id: storeId,
+              type: "stores",
+            },
           },
         },
       },
@@ -108,7 +110,7 @@ export async function createCustomer(
  * @returns A customer object
  */
 export async function updateCustomer(
-  options: UpdateCustomerOptions & SharedModuleOptions
+  options: UpdateCustomerOptions & SharedModuleOptions,
 ): Promise<RetrieveCustomerResult> {
   const { id, name, email, city, country, region, status, ...rest } = options;
 
@@ -116,16 +118,18 @@ export async function updateCustomer(
     path: `/customers/${id}`,
     method: "PATCH",
     data: {
-      attributes: {
-        ...(name ? { name } : {}),
-        ...(email ? { email } : {}),
-        ...(city ? { city } : {}),
-        ...(country ? { country } : {}),
-        ...(region ? { region } : {}),
-        ...(status ? { status } : {}),
+      data: {
+        attributes: {
+          ...(name ? { name } : {}),
+          ...(email ? { email } : {}),
+          ...(city ? { city } : {}),
+          ...(country ? { country } : {}),
+          ...(region ? { region } : {}),
+          ...(status ? { status } : {}),
+        },
+        id,
+        type: "customers",
       },
-      id,
-      type: "customers",
     },
     ...rest,
   });
