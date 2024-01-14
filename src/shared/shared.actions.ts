@@ -5,13 +5,12 @@ import type {
   PaginatedBaseLemonsqueezyResponse,
 } from ".";
 import qs from "qs";
-import { fetch } from "undici";
 
 export async function requestLemonSqueeze<
   TResponse extends
     | BaseLemonsqueezyResponse<any>
     | PaginatedBaseLemonsqueezyResponse<any>,
-  TData extends Record<string, any> = Record<string, any>
+  TData extends Record<string, any> = Record<string, any>,
 >({
   apiKey,
   apiVersion = "v1",
@@ -41,7 +40,7 @@ export async function requestLemonSqueeze<
         Accept: "application/vnd.api+json",
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/vnd.api+json",
-        ...headers,
+        ...(headers as RequestInit["headers"]),
       },
       method,
       ...(data && method !== "GET"
