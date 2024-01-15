@@ -13,6 +13,18 @@ export type {
 } from "./modules/checkout/checkout.types";
 
 export type {
+  LemonsqueezyCustomer,
+  ListAllCustomersOptions,
+  ListAllCustomersResult,
+  RetrieveCustomerOptions,
+  RetrieveCustomerResult,
+  CreateCustomerResult,
+  CreateCustomerOptions,
+  UpdateCustomerOptions,
+  UpdateCustomerResult,
+} from "./modules/customer/customer.types";
+
+export type {
   LemonsqueezyDiscount,
   ListAllDiscountsOptions,
   ListAllDiscountsResult,
