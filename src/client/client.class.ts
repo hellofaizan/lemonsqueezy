@@ -37,6 +37,7 @@ import {
   updateSubscriptionItem,
   CreateCustomerOptions,
   UpdateCustomerOptions,
+  retrieveVariantPriceModel,
 } from "../modules";
 import type {
   CreateCheckoutOptions,
@@ -221,6 +222,13 @@ export class LemonsqueezyClient {
    */
   public async retrieveVariant(options: RetrieveVariantOptions) {
     return retrieveVariant({
+      apiKey: this._apiKey,
+      ...options,
+    });
+  }
+
+  public async retrieveVariantPriceModel(options: RetrieveVariantOptions) {
+    return retrieveVariantPriceModel({
       apiKey: this._apiKey,
       ...options,
     });
@@ -507,7 +515,7 @@ export class LemonsqueezyClient {
    * @returns A license key instance object
    */
   public async retrieveLicenseKeyInstance(
-    options: RetrieveLicenseKeyInstanceOptions
+    options: RetrieveLicenseKeyInstanceOptions,
   ) {
     return retrieveLicenseKeyInstance({
       apiKey: this._apiKey,
@@ -527,7 +535,7 @@ export class LemonsqueezyClient {
    * @returns Returns a paginated list of license key instance objects ordered by `id`
    */
   public async listAllLicenseKeyInstances(
-    options: ListAllLicenseKeyInstancesOptions = {}
+    options: ListAllLicenseKeyInstancesOptions = {},
   ) {
     return listAllLicenseKeyInstances({
       apiKey: this._apiKey,
@@ -599,7 +607,7 @@ export class LemonsqueezyClient {
    * @returns A subscription invoice object
    */
   public async retrieveSubscriptionInvoice(
-    options: RetrieveSubscriptionInvoiceOptions
+    options: RetrieveSubscriptionInvoiceOptions,
   ) {
     return retrieveSubscriptionInvoice({
       apiKey: this._apiKey,
@@ -619,7 +627,7 @@ export class LemonsqueezyClient {
    * @returns Returns a paginated list of subscription invoice objects.
    */
   public async listAllSubscriptionInvoices(
-    options: ListAllSubscriptionInvoicesOptions = {}
+    options: ListAllSubscriptionInvoicesOptions = {},
   ) {
     return listAllSubscriptionInvoices({
       apiKey: this._apiKey,
@@ -628,7 +636,7 @@ export class LemonsqueezyClient {
   }
 
   public async listAllSubscriptionItems(
-    options: ListAllSubscriptionItemsOptions = {}
+    options: ListAllSubscriptionItemsOptions = {},
   ) {
     return listAllSubscriptionItems({
       apiKey: this._apiKey,
@@ -637,7 +645,7 @@ export class LemonsqueezyClient {
   }
 
   public async retrieveSubscriptionItem(
-    options: RetrieveSubscriptionItemOptions
+    options: RetrieveSubscriptionItemOptions,
   ) {
     return retrieveSubscriptionItem({
       apiKey: this._apiKey,

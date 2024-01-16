@@ -29,6 +29,7 @@ export {
   retrieveStore,
   retrieveSubscription,
   retrieveVariant,
+  retrieveVariantPriceModel,
   updateSubscription,
   updateCustomer,
 } from "./modules";
