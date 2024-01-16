@@ -4,6 +4,7 @@ import type {
   PaginatedBaseLemonsqueezyResponse,
   SharedLemonsqueezyOptions,
 } from "../../shared";
+import { LemonsqueezyPrice } from "../price/price.types";
 
 export type LemonsqueezyInterval = "day" | "week" | "month" | "year";
 
@@ -159,3 +160,11 @@ export interface RetrieveVariantOptions extends SharedLemonsqueezyOptions {
 
 export type RetrieveVariantResult =
   BaseLemonsqueezyResponse<LemonsqueezyVariant>;
+
+export interface RetrieveVariantPriceModelOptions
+  extends SharedLemonsqueezyOptions {
+  id: string;
+}
+
+export type RetrieveVariantPriceModelResult =
+  BaseLemonsqueezyResponse<LemonsqueezyPrice>;

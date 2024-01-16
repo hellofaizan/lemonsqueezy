@@ -4,6 +4,8 @@ import type {
   ListAllVariantsOptions,
   ListAllVariantsResult,
   RetrieveVariantOptions,
+  RetrieveVariantPriceModelOptions,
+  RetrieveVariantPriceModelResult,
   RetrieveVariantResult,
 } from "./variant.types";
 
@@ -19,7 +21,7 @@ import type {
  * @returns Returns a paginated list of variant objects ordered by sort
  */
 export async function listAllVariants(
-  options: ListAllVariantsOptions & SharedModuleOptions
+  options: ListAllVariantsOptions & SharedModuleOptions,
 ): Promise<ListAllVariantsResult> {
   const { productId, status, ...rest } = options;
 
@@ -47,12 +49,34 @@ export async function listAllVariants(
  * @returns A variant object
  */
 export async function retrieveVariant(
-  options: RetrieveVariantOptions & SharedModuleOptions
+  options: RetrieveVariantOptions & SharedModuleOptions,
 ): Promise<RetrieveVariantResult> {
   const { id, ...rest } = options;
 
   return requestLemonSqueeze<RetrieveVariantResult>({
     path: `/variants/${id}`,
+    ...rest,
+  });
+}
+
+/**
+ * Retrieve variant price model
+ *
+ * @description Retrieves the price model for the variant with the given ID
+ *
+ * @docs https://docs.lemonsqueezy.com/api/variants#retrieve-a-variant
+ *
+ * @param {String} options.id - The ID of the variant to retrieve
+ *
+ * @returns A price object
+ */
+export async function retrieveVariantPriceModel(
+  options: RetrieveVariantPriceModelOptions & SharedModuleOptions,
+): Promise<RetrieveVariantPriceModelResult> {
+  const { id, ...rest } = options;
+
+  return requestLemonSqueeze<RetrieveVariantPriceModelResult>({
+    path: `/variants/${id}/price-model`,
     ...rest,
   });
 }
