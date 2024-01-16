@@ -75,6 +75,12 @@ export interface LemonsqueezyCustomer {
      * @see https://en.wikipedia.org/wiki/ISO_8601
      */
     updated_at: Date;
+    /**
+     * Related urls
+     */
+    urls: {
+      customer_portal: string;
+    };
   };
   type: LemonsqueezyDataType.customers;
   id: string;

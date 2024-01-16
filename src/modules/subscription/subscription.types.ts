@@ -124,6 +124,7 @@ export interface LemonsqueezySubscription {
        * @docs https://docs.lemonsqueezy.com/help/lemonjs/what-is-lemonjs
        */
       update_payment_method: string;
+      customer_portal: string;
     };
     /**
      * The first subscription item

@@ -135,4 +135,6 @@ export type {
   ListAllVariantsResult,
   RetrieveVariantOptions,
   RetrieveVariantResult,
+  RetrieveVariantPriceModelOptions,
+  RetrieveVariantPriceModelResult,
 } from "./modules/variant/variant.types";
