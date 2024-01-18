@@ -224,7 +224,7 @@ export interface UpdateSubscriptionOptions extends SharedLemonsqueezyOptions {
    * @docs https://docs.lemonsqueezy.com/api/products
    * @docs https://docs.lemonsqueezy.com/api/variants
    */
-  productId: string;
+  productId?: string;
   /**
    * The ID of the Variant Object you want to switch this subscription to.
    *
@@ -232,7 +232,7 @@ export interface UpdateSubscriptionOptions extends SharedLemonsqueezyOptions {
    *
    * @docs https://docs.lemonsqueezy.com/api/variants
    */
-  variantId: string;
+  variantId?: string;
   /**
    * If true, any updates to the subscription will be charged immediately.
    * A new prorated invoice will be generated and payment attempted.

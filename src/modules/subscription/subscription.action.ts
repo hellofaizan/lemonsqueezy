@@ -109,7 +109,9 @@ export async function updateSubscription(
       data: {
         attributes: {
           ...(billingAnchor ? { billing_anchor: billingAnchor } : {}),
-          ...(invoiceImmediately ? { invoice_immediately: true } : {}),
+          ...(invoiceImmediately
+            ? { invoice_immediately: invoiceImmediately }
+            : {}),
           ...(cancelled ? { cancelled } : {}),
           ...(pause ? { pause } : {}),
           ...(productId ? { product_id: productId } : {}),
