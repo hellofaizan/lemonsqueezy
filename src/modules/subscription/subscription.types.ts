@@ -233,6 +233,11 @@ export interface UpdateSubscriptionOptions extends SharedLemonsqueezyOptions {
    * @docs https://docs.lemonsqueezy.com/api/variants
    */
   variantId: string;
+  /**
+   * If true, any updates to the subscription will be charged immediately.
+   * A new prorated invoice will be generated and payment attempted.
+   */
+  invoiceImmediately?: boolean;
 }
 
 export type UpdateSubscriptionResult =

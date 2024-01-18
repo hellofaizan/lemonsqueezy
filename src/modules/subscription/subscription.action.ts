@@ -22,7 +22,7 @@ import type {
  * @returns Returns a paginated list of subscription objects ordered by `created_at` (descending)
  */
 export async function listAllSubscriptions(
-  options: ListAllSubscriptionsOptions & SharedModuleOptions
+  options: ListAllSubscriptionsOptions & SharedModuleOptions,
 ): Promise<ListAllSubscriptionsResult> {
   const { orderId, orderItemId, productId, storeId, variantId, ...rest } =
     options;
@@ -52,7 +52,7 @@ export async function listAllSubscriptions(
  * @returns A subscription object
  */
 export async function retrieveSubscription(
-  options: RetrieveSubscriptionOptions & SharedModuleOptions
+  options: RetrieveSubscriptionOptions & SharedModuleOptions,
 ): Promise<RetrieveSubscriptionResult> {
   const { id, ...rest } = options;
 
@@ -91,20 +91,29 @@ export async function retrieveSubscription(
  * @returns A subscription object
  */
 export async function updateSubscription(
-  options: UpdateSubscriptionOptions & SharedModuleOptions
+  options: UpdateSubscriptionOptions & SharedModuleOptions,
 ): Promise<UpdateSubscriptionResult> {
-  const { billingAnchor, cancelled, id, pause, productId, variantId, ...rest } =
-    options;
+  const {
+    billingAnchor,
+    invoiceImmediately,
+    cancelled,
+    id,
+    pause,
+    productId,
+    variantId,
+    ...rest
+  } = options;
 
   return requestLemonSqueeze<UpdateSubscriptionResult>({
     data: {
       data: {
         attributes: {
-          billing_anchor: billingAnchor,
-          cancelled,
-          pause,
-          product_id: productId,
-          variant_id: variantId,
+          ...(billingAnchor ? { billing_anchor: billingAnchor } : {}),
+          ...(invoiceImmediately ? { invoice_immediately: true } : {}),
+          ...(cancelled ? { cancelled } : {}),
+          ...(pause ? { pause } : {}),
+          ...(productId ? { product_id: productId } : {}),
+          ...(variantId ? { variant_id: variantId } : {}),
         },
         id,
         type: LemonsqueezyDataType.subscriptions,
