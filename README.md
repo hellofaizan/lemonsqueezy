@@ -16,9 +16,9 @@
     <br />
     <br />
   
-[![Build status](https://img.shields.io/github/actions/workflow/status/alexgrozav/lemonsqueezy/ci.yml?branch=main&label=%20&logo=github&logoColor=white&style=for-the-badge)](https://github.com/alexgrozav/lemonsqueezy/actions/workflows/ci.yml)
-[![Package version](https://img.shields.io/npm/v/lmnsqz?label=%20&style=for-the-badge)](https://www.npmjs.com/package/lmnsqz)
-[![Package monthly downloads](https://img.shields.io/npm/dm/lmnsqz?color=blueviolet&label=%20&style=for-the-badge)](https://www.npmjs.com/package/lmnsqz)
+[![Build status](https://img.shields.io/github/actions/workflow/status/hellofaizan/lemonsqueezy/ci.yml?branch=main&label=%20&logo=github&logoColor=white&style=for-the-badge)](https://github.com/hellofaizan/lemonsqueezy/actions/workflows/ci.yml)
+[![Package version](https://img.shields.io/npm/v/hslmnsqz?label=%20&style=for-the-badge)](https://www.npmjs.com/package/hslmnsqz)
+[![Package monthly downloads](https://img.shields.io/npm/dm/hslmnsqz?color=blueviolet&label=%20&style=for-the-badge)](https://www.npmjs.com/package/hslmnsqz)
 [![Docs](https://img.shields.io/badge/-Docs-blue.svg?style=for-the-badge)](https://docs.lemonsqueezy.com/api)
 
   </sup>
@@ -32,13 +32,13 @@ Install it locally in your project
 
 ```bash
 # npm
-npm install lmnsqz
+npm install hslmnsqz
 
 # yarn
-yarn add lmnsqz
+yarn add hslmnsqz
 
 # pnpm
-pnpm install lmnsqz
+pnpm install hslmnsqz
 ```
 
 ## 🦄 Usage
